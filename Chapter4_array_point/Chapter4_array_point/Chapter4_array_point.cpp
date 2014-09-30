@@ -45,8 +45,11 @@ void aboutArray()
 	
 	for (size_t i = 0; i < SIZE_1; i++)
 	{
-		cout<<stra[i];
+		cout<<stra[i]<<endl;
 	}
+
+
+
 
 }
 
