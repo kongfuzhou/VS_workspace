@@ -69,11 +69,32 @@ int _tmain(int argc, _TCHAR* argv[])
 	std::cout<<"valB="<<valB;
 	//枚举 默认第一个是0 之后累加
 	enum fileStatus {input,output,append};
-	
+
+	//也可以给枚举赋默认值 不赋值值的总会比前一个大一
+	enum MyEnum
+	{
+		enum1=10,
+		enum2,
+		enum3=20,
+		enum4
+	};
+
+	std::cout<<"xx MyEnum=="<<MyEnum::enum4;
 	//定义和声明
 	extern int myVal_0; //声明: 使用extern 并且不能初始化变量，不然就算用了extern关键字也是定义
 	int myVal_1; //定义,vs中如果使用了extern关键字就不能初始化了
+	//C++中初始化并非赋值
+	std::cout<< "Hello C++ program." ;
+	std::cout<< std::endl;
+
+	std::cout<< "pleaese enter two numbers.";
+
+	int inV1,inV2;
+	std::cin>>inV1>>inV2;
+	std::cout<<"inV1="<<inV1<<" inV2="<<inV2;
 	
+	
+
 	return 0;
 }
 

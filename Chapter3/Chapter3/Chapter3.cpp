@@ -19,13 +19,16 @@ using std::bitset;
 void operateBitSet()
 {
 	string str1("1100");
-	bitset<32> b1(100);
+	bitset<32> b1(1010);
 	cout<<b1[3]<<endl;
 
 	size_t b1Size=b1.size(); //长度
 	size_t oneNum=b1.count();
 
-	cout<<"b1Size="<<b1Size<<" oneNum="<<oneNum<<" "<<b1.to_ulong()<<endl;
+	bitset<32> b2(str1);
+
+
+	cout<<"b1Size="<<b1Size<<" oneNum="<<oneNum<<" "<<b1.to_ulong()<<endl<<"b2="<<b2.to_ulong()<<endl;
 
 }
 
@@ -50,7 +53,7 @@ void operateVector()
 	vector<string>::size_type len1=vecStr1.size(); //好神奇的类型
 	cout<<"len1="<<len1<<endl;
 
-	//通过下标不能添加元素
+	//通过下标不能添加元素,可以修改已确实存在的元素
 
 	//迭代器
 	vector<int>::iterator iter=ivec3.begin();
@@ -58,13 +61,15 @@ void operateVector()
 	cout<<"iter1="<<*iter<<endl; //通过 *iter 获取到迭代器所指向的元素
 	//迭代器自增操作就是获取到下一个元素
 	++iter;
-	cout<<"iter2="<<*iter<<endl;
-
+	cout<<"iter2 55 ="<<*iter<<endl;
+	//iter=ivec3.end();
+	//cout<<"end()="<<*iter;
+	return;
 	//vector<string>::const_iterator //通过解引用得到的是常量
 
 	const vector<int>::iterator it1=ivec3.begin();
 	*it1=0;
-	//++it1; 这里会报错以为系常量 不能修改迭代器
+	//++it1;// 这里会报错以为系常量 不能修改迭代器
 	//迭代器的算术操作
 
 	vector<int> nums;
@@ -80,6 +85,20 @@ void operateVector()
 	cout<<"xx it2="<<*it2<<endl;
 	nums.push_back(100);
 	cout<<"push_back后it2="<<*it2<<endl;
+
+	return;
+	cout<<"myIntVect"<<endl;
+
+	vector<int> ivec5(ivec3);
+	for (vector<int>::size_type ix=0;ix!=ivec5.size();ix++)
+	{
+		ivec5[ix]=0; //因为ix下标的元素确实存在,所以可以修改赋值
+		cout<<"ivec5["<<ix<<"]"<<"="<<ivec5[ix]<<endl;
+	}
+
+
+
+
 
 }
 
@@ -102,7 +121,7 @@ void operateStr()
 	{
 		cout << s1<<endl;
 		i++;
-		if(i>=1)
+		if(i>=5)
 		{
 			break;
 		}
