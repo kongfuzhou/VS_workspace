@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "iostream"
-#include "Sales_item.h";
+
 
 void trace()
 {
@@ -78,8 +78,8 @@ int _tmain(int argc, _TCHAR* argv[])
 		enum3=20,
 		enum4
 	};
-
-	std::cout<<"xx MyEnum=="<<MyEnum::enum4;
+	MyEnum e4 = enum4;
+	std::cout<<"xx MyEnum=="<<MyEnum::enum4<<e4<<std::endl;
 	//定义和声明
 	extern int myVal_0; //声明: 使用extern 并且不能初始化变量，不然就算用了extern关键字也是定义
 	int myVal_1; //定义,vs中如果使用了extern关键字就不能初始化了
@@ -90,11 +90,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	std::cout<< "pleaese enter two numbers.";
 
 	int inV1,inV2;
-	std::cin>>inV1>>inV2;
-	std::cout<<"inV1="<<inV1<<" inV2="<<inV2;
+	//std::cin>>inV1>>inV2;
+	//std::cout<<"inV1="<<inV1<<" inV2="<<inV2;
 	
-	
-
 	return 0;
 }
 
